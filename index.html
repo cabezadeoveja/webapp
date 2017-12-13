@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
+	<title>Animal Crossing</title>
+</head>
+<body>
+	<div class="container-fluid" id="splash">
+		<div class="row">
+			<div class="col-xs-12">
+				<img class="gif" src="assets/img/loading.gif">
+				<h1 class="title-splash">WELCOME T0 HOME</h1>
+				<hr>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<header>
+			<div class="row">
+				<div class="col-xs-12">
+				<h1>Animal Crossing New Leaf</h1>
+				<hr>
+				</div>
+			</div>
+		</header>
+		<section class="map">
+			<div class="row">
+				<div class="col-xs-12">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.826429316748!2d139.7713261273595!3d35.70588866359962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ea73ea6f4ff%3A0x5eb9f1e50fe061e3!2sAkihabara%2C+Tait%C5%8D%2C+Tokio+110-0006%2C+Jap%C3%B3n!5e0!3m2!1ses-419!2scl!4v1513130261040" width="100%" height="200vh" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+			</div>			
+		</section>
+		<section class="subtitle">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2>Entretención cerca de tí</h2>
+				</div>
+			</div>
+		<section class="filter">
+			<div class="row">
+				<div class="col-xs-12">
+					<select class="form-control" name="panoramas" onchange="mostrarValor(this.value);">
+						<option value="" disabled selected="">¿Que quieres hacer hoy?</option>
+  						<option value="1">Conocer Nuevos Amigos</option>
+  						<option value="2">Comer Comida Deliciosa</option>
+  						<option value="3">Ir de Compras</option>
+  						<option value="4">Jardineria y Plantas</option>
+  						<option value="5">Visitar Animales Acuaticos</option>
+					</select>
+				</div>
+			</div>	
+		</section>
+		<section class="food-images">
+			<div class="row">
+				<div class="col-xs-4 sites">
+					<img class="img1" src="assets/img/1entretencion.jpg">
+				</div>
+				<div class="col-xs-4 sites">
+					<img src="assets/img/2restaurante.jpg">
+				</div>	
+				<div class="col-xs-4 sites">
+					<img src="assets/img/3supermarket.jpg">
+				</div>									
+			</div>	
+			<div class="row">
+				<div class="col-xs-6 sites">
+					<img src="assets/img/4invernadero.jpg">
+				</div>
+				<div class="col-xs-6 sites">
+					<img src="assets/img/5acuarios.jpg">
+				</div>
+			</div>			
+		</section>
+
+	</div> <!-- close container-fluid -->
+<!-- Script Files -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>	
+</body>
+</html>
