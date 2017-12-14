@@ -14,6 +14,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	position: absolute;
 }
 
 .title-splash{
@@ -62,7 +63,7 @@ h2{
 	padding: 0.2em 0.2em 0.45em 0.2em;
 }
 
-.food-images{
+.sites-images{
 	padding: 1em;
 }
 
@@ -73,4 +74,49 @@ h2{
 img{
 	height: 100%;
 	width: 100%;
+}
+
+.sites-entretencion{
+	padding: 1em;
+}
+
+.entretencion{
+	padding: 0.2em;
+}
+
+.sites-restaurante{
+	padding: 1em;
+}
+
+.restaurante{
+	padding: 0.2em;
+}
+
+.sites-supermarket{
+	padding: 1em;
+}
+
+.supermarket{
+	padding: 0.2em;
+}
+
+.sites-jardineria{
+	padding: 1em;
+}
+
+.jardineria{
+	padding: 0.2em;
+}
+
+.sites-acuatico{
+	padding: 1em;
+}
+
+.acuatico{
+	padding: 0.2em;
+}
+
+.btn-primary{
+	background-color: #F5A9BC;
+	border: #F5A9BC;
 }

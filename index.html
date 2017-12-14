@@ -9,7 +9,7 @@
 	<title>Animal Crossing</title>
 </head>
 <body>
-	<div class="container-fluid" id="splash">
+	<div class="container-fluid" id="splash" style="display: none;">
 		<div class="row">
 			<div class="col-xs-12">
 				<img class="gif" src="assets/img/loading.gif">
@@ -44,42 +44,246 @@
 		<section class="filter">
 			<div class="row">
 				<div class="col-xs-12">
-					<select class="form-control" name="panoramas" onchange="mostrarValor(this.value);">
-						<option value="" disabled selected="">¿Que quieres hacer hoy?</option>
-  						<option value="1">Conocer Nuevos Amigos</option>
-  						<option value="2">Comer Comida Deliciosa</option>
-  						<option value="3">Ir de Compras</option>
-  						<option value="4">Jardineria y Plantas</option>
-  						<option value="5">Visitar Animales Acuaticos</option>
+					<select class="form-control" id="panoramas" name="panoramas" onChange="viewFiltre(this.value);">
+						<option type="button" value="sites-panoramas" disabled selected="">¿Que quieres hacer hoy?</option>
+						<option type="button" value="sites-topfive">Top Five</option>
+  						<option type="button" value="sites-entretencion">Conocer Nuevos Amigos</option>
+  						<option type="button" value="sites-restaurante">Comer Comida Deliciosa</option>
+  						<option type="button" value="sites-supermarket">Ir de Compras</option>
+  						<option type="button" value="sites-jardineria">Jardineria y Plantas</option>
+  						<option type="button" value="sites-acuatico">Visitar Animales Acuaticos</option>
 					</select>
 				</div>
 			</div>	
 		</section>
-		<section class="food-images">
+		<section class="sites-images" id="sites-panoramas">
 			<div class="row">
 				<div class="col-xs-4 sites">
-					<img class="img1" src="assets/img/1entretencion.jpg">
+					<img class="effect1" src="assets/img/1entretencion.jpg" data-toggle="modal" data-target="#entretencionModal">
 				</div>
 				<div class="col-xs-4 sites">
-					<img src="assets/img/2restaurante.jpg">
+					<img class="effect2" src="assets/img/2restaurante.jpg">
 				</div>	
 				<div class="col-xs-4 sites">
-					<img src="assets/img/3supermarket.jpg">
+					<img class="effect3" src="assets/img/3supermarket.jpg">
 				</div>									
 			</div>	
 			<div class="row">
 				<div class="col-xs-6 sites">
-					<img src="assets/img/4invernadero.jpg">
+					<img class="effect4" src="assets/img/4invernadero.jpg">
 				</div>
 				<div class="col-xs-6 sites">
-					<img src="assets/img/5acuarios.jpg">
+					<img class="effect5" src="assets/img/5acuarios.jpg" data-toggle="modal" data-target="#acuarioModal">
 				</div>
 			</div>			
 		</section>
 
+<!-- Filtrado -->
+		<section class="sites-images" id="sites-topfive" style="display: none;">
+			<div class="row">
+				<div class="col-xs-4 sites">
+					<img class="effect1" src="assets/img/1entretencion.jpg" data-toggle="modal" data-target="#entretencionModal">
+				</div>
+				<div class="col-xs-4 sites">
+					<img class="effect2" src="assets/img/2restaurante.jpg">
+				</div>	
+				<div class="col-xs-4 sites">
+					<img class="effect3" src="assets/img/3supermarket.jpg">
+				</div>									
+			</div>	
+			<div class="row">
+				<div class="col-xs-6 sites">
+					<img class="effect4" src="assets/img/4invernadero.jpg">
+				</div>
+				<div class="col-xs-6 sites">
+					<img class="effect5" src="assets/img/5acuarios.jpg" data-toggle="modal" data-target="#acuarioModal">
+				</div>
+			</div>			
+		</section>		
+		<section class="sites-images" id="sites-entretencion" style="display: none;">
+			<div class="row">
+				<div class="col-xs-4 entretencion">
+					<img class="effect1" src="assets/img/entretencion01.jpg">
+				</div>
+				<div class="col-xs-4 entretencion">
+					<img class="effect2" src="assets/img/entretencion02.jpg">
+				</div>
+				<div class="col-xs-4 entretencion">
+					<img class="effect3" src="assets/img/entretencion03.jpg">
+				</div>								
+			</div>
+			<div class="row">
+				<div class="col-xs-6 entretencion">
+					<img class="effect4" src="assets/img/entretencion04.jpg">
+				</div>
+				<div class="col-xs-6 entretencion">
+					<img class="effect5" src="assets/img/entretencion05.jpg">
+				</div>				
+			</div>
+		</section>
+		<section class="sites-images" id="sites-restaurante" style="display: none;">
+			<div class="row">
+				<div class="col-xs-4 restaurante">
+					<img class="effect1" src="assets/img/restaurante01.jpg">
+				</div>
+				<div class="col-xs-4 restaurante">
+					<img class="effect2" src="assets/img/restaurante02.jpg">
+				</div>
+				<div class="col-xs-4 restaurante">
+					<img class="effect3" src="assets/img/restaurante03.jpg">
+				</div>								
+			</div>
+			<div class="row">
+				<div class="col-xs-6 restaurante">
+					<img class="effect4" class="effect" src="assets/img/restaurante04.jpg" data-toggle="modal" data-target="#restauranteModal">
+				</div>
+				<div class="col-xs-6 restaurante">
+					<img class="effect5" class="effect" src="assets/img/restaurante05.jpg">
+				</div>				
+			</div>
+		</section>
+		<section class="sites-images" id="sites-supermarket" style="display: none;">
+			<div class="row">
+				<div class="col-xs-4 supermarket">
+					<img class="effect1" src="assets/img/supermarket01.jpg">
+				</div>
+				<div class="col-xs-4 supermarket">
+					<img class="effect2" src="assets/img/supermarket02.jpg">
+				</div>
+				<div class="col-xs-4 supermarket">
+					<img class="effect3" src="assets/img/supermarket03.jpg">
+				</div>								
+			</div>
+			<div class="row">
+				<div class="col-xs-6 supermarket">
+					<img class="effect4" src="assets/img/supermarket04.jpg">
+				</div>
+				<div class="col-xs-6 supermarket">
+					<img class="effect5" src="assets/img/supermarket05.jpg">
+				</div>				
+			</div>
+		</section>		
+		<section class="sites-images" id="sites-jardineria" style="display: none;">
+			<div class="row">
+				<div class="col-xs-4 jardineria">
+					<img class="effect1" src="assets/img/jardineria01.jpg">
+				</div>
+				<div class="col-xs-4 jardineria">
+					<img class="effect2" src="assets/img/jardineria02.jpg">
+				</div>
+				<div class="col-xs-4 jardineria">
+					<img class="effect3" src="assets/img/jardineria03.jpg">
+				</div>								
+			</div>
+			<div class="row">
+				<div class="col-xs-6 jardineria">
+					<img class="effect4" src="assets/img/jardineria04.jpg">
+				</div>
+				<div class="col-xs-6 jardineria">
+					<img class="effect5" src="assets/img/jardineria05.jpg">
+				</div>				
+			</div>
+		</section>
+		<section class="sites-images" id="sites-acuatico" style="display: none;">
+			<div class="row">
+				<div class="col-xs-4 acuatico">
+					<img class="effect1" src="assets/img/acuario01.jpg">
+				</div>
+				<div class="col-xs-4 acuatico">
+					<img class="effect2" src="assets/img/acuario02.jpg">
+				</div>
+				<div class="col-xs-4 acuatico">
+					<img class="effect3" src="assets/img/acuario03.jpg">
+				</div>								
+			</div>
+			<div class="row">
+				<div class="col-xs-6 acuatico">
+					<img class="effect4" src="assets/img/acuario04.jpg">
+				</div>
+				<div class="col-xs-6 acuatico">
+					<img class="effect5" src="assets/img/acuario05.jpg">
+				</div>				
+			</div>
+		</section>		
+
+<!-- Modals 1 TOP FIVE -->
+		<div class="modal fade" id="entretencionModal" tabindex="-1" role="dialog" aria-labelledby="ModalOne" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title"> &#9733; TOP FIVE &#9733; <br> Conocer Nuevos Amigos</h4>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3239.4200269143385!2d139.7705720433834!3d35.71588726874577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1513229160373" width="100%" height="150vh" frameborder="0" style="border:0" allowfullscreen></iframe>
+		      	<h4>Zoológico de Ueno</h4>
+		      	<p>9-83 Uenokōen <br>
+		      	Taitō-ku, Tōkyō-to 110-0007, Japón <br>
+		      	&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+<!-- Modals 2 TOP FIVE -->
+		<div class="modal fade" id="acuarioModal" tabindex="-1" role="dialog" aria-labelledby="ModalOne" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title"> &#9733; TOP FIVE &#9733; <br> Animales Acuaticos</h4>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.0073155405967!2d135.42677045048225!3d34.65451818035042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e8f48c0da9cd%3A0x6f83c520ae082ccc!2sAcuario+de+Osaka!5e0!3m2!1ses-419!2scl!4v1513230110126" width="100%" height="150vh" frameborder="0" style="border:0" allowfullscreen></iframe>
+		      	<h4>OSAKA AQUARIUM</h4>
+		      	<p>1 Chome-1-10 Kaigandōri, Minato-ku<br>
+		      	Ōsaka-fu 552-0022, Japón <br>
+		      	&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+<!-- Modals 3 RESTAURANTE -->
+		<div class="modal fade" id="restauranteModal" tabindex="-1" role="dialog" aria-labelledby="ModalOne" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title"> &#9733; Restaurante &#9733; <br> Curry Love Friendly</h4>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.710881608839!2d127.78932365025432!3d26.33585988329778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e5121492b80963%3A0x9e1bd38811f52a6a!2sCoCo+Curry+House!5e0!3m2!1ses-419!2scl!4v1513231577177" width="100%" height="150vh" frameborder="0" style="border:0" allowfullscreen></iframe>
+		      	<h4>COCO CURRY HOUSE</h4>
+		      	<p>4 Chome-20-6 Uechi<br>
+		      	Okinawa-ken 904-0031, Japón <br>
+		      	&#9733; &#9733; &#9733; &#9733;</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>		
+
 	</div> <!-- close container-fluid -->
 <!-- Script Files -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="assets/js/app.js"></script>	
 </body>
 </html>
